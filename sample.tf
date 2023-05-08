@@ -13,6 +13,14 @@ resource "aws_instance" "frontend" {
   }
 }
 
+resource "aws_route53_record" "frontend" {
+  zone_id = "Z07723241NASCD733XBTT"
+  name    = "frontend-dev.devops2023sk.online"
+  type    = "A"
+  ttl     = 30
+  records = [aws_instance.frontend.private_ip]
+}
+
 
 resource "aws_instance" "mongodb" {
   ami           = data.aws_ami.centos.image_id
@@ -21,4 +29,11 @@ resource "aws_instance" "mongodb" {
   tags = {
     Name = "mongodb"
   }
+}
+resource "aws_route53_record" "mongodb" {
+  zone_id = "Z07723241NASCD733XBTT"
+  name    = "mongodb-dev.devops2023sk.online"
+  type    = "A"
+  ttl     = 30
+  records = [aws_instance.mongodb.private_ip]
 }
