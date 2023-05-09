@@ -12,3 +12,7 @@ output "sample_dict_boolean" {
 output "sample_dict_num1" {
   value = var.sample_dict["number1"]
 }
+
+output "auto_num1" {
+   value = var.auto_num1
+}

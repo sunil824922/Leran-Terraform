@@ -12,7 +12,7 @@ variable "sample_list" {
 
 variable "sample_dict" {
   default = {
-    number1 = 100
+    number1 = 600
     string = "hello"
     number2 = 123
     boolean = true
