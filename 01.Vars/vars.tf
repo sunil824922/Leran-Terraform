@@ -11,11 +11,11 @@ variable "sample_list" {
 
 
 variable "sample_dict" {
-defaul = {
-   number1 = 100
-   string = "hello"
-   number2 = 123
-   boolean = true
+  default = {
+    number1 = 100
+    string = "hello"
+    number2 = 123
+    boolean = true
  }
 }
 
