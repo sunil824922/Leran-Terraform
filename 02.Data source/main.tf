@@ -1,5 +1,5 @@
 data "aws_security_group" "selected" {
-  name = "Allow All"
+  name = "allow-all"
 }
 
 output "security_group_id" {
