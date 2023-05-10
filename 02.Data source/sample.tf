@@ -8,7 +8,7 @@ variable "instance_type"  {
   default= "t3.micro"
 }
 
-data "aws_security_group" "selected" {
+data "aws_security_group" "aloow-all" {
   name = "allow-all"
 }
 
