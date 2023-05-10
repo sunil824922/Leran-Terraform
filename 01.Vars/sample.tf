@@ -16,7 +16,7 @@ data "aws_security_group" "selected" {
 resource "aws_instance" "frontend" {
   ami           = data.aws_ami.centos.image_id
   instance_type = "var.instance_type"
-  vpc_security_group_ids = { data.aws_security_group.Allow ALl.id }
+  vpc_security_group_ids = { data.aws_security_group.Allow All.id }
 
   tags = {
     Name = "frontend"
@@ -36,7 +36,7 @@ resource "aws_route53_record" "frontend" {
 resource "aws_instance" "mongodb" {
   ami           = data.aws_ami.centos.image_id
   instance_type = "var.instance_type"
-  vpc_security_group_ids = { data.aws_security_group.Allow ALl.id }
+  vpc_security_group_ids = { data.aws_security_group.Allow All.id }
 
   tags = {
     Name = "mongodb"
