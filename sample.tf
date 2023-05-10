@@ -8,14 +8,21 @@ variable "instance_type"  {
   default= "t3.micro"
 }
 
+data "aws_security_group" "selected" {
+  name = "Allow All"
+}
+
+
 resource "aws_instance" "frontend" {
   ami           = data.aws_ami.centos.image_id
   instance_type = "var.instance_type"
+  vpc_security_group_ids = { data.aws_security_group.Allow ALl.id }
 
   tags = {
     Name = "frontend"
   }
 }
+
 
 resource "aws_route53_record" "frontend" {
   zone_id = "Z07723241NASCD733XBTT"
@@ -29,6 +36,7 @@ resource "aws_route53_record" "frontend" {
 resource "aws_instance" "mongodb" {
   ami           = data.aws_ami.centos.image_id
   instance_type = "var.instance_type"
+  vpc_security_group_ids = { data.aws_security_group.Allow ALl.id }
 
   tags = {
     Name = "mongodb"
