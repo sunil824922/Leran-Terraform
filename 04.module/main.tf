@@ -2,13 +2,11 @@
 
 module "sample" {
   source = "./module"
-  input = "module.dummy.dummy_op"
+  input  = module.dummy.dummy_op
 }
-
 
 module "dummy" {
   source = "./dummy"
 }
-
 
 
